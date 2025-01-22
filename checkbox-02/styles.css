@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(120deg, #f6d365, #fda085);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+/* Container for the checkbox */
+.checkbox-container {
+	position: relative;
+	display: inline-block;
+}
+
+/* Hide the default checkbox */
+.custom-checkbox {
+	display: none;
+}
+
+/* Style the label */
+.custom-label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	font-size: 16px;
+	color: #333;
+}
+
+/* Checkmark styling */
+.checkmark {
+	position: relative;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	background: #fff;
+	transition: all 0.3s ease;
+	margin-right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Checkmark hover effect */
+.custom-label:hover .checkmark {
+	border-color: #f6d365;
+	box-shadow: 0 0 10px rgba(246, 211, 101, 0.6);
+}
+
+/* When checkbox is checked */
+.custom-checkbox:checked + .checkmark {
+	border-color: #fda085;
+	background: linear-gradient(120deg, #fda085, #f6d365);
+	box-shadow: 0 0 15px rgba(253, 160, 133, 0.6);
+}
+
+/* Checkmark symbol */
+.checkmark::after {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 14px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+/* Show the checkmark symbol when checked */
+.custom-checkbox:checked + .checkmark::after {
+	opacity: 1;
+}
